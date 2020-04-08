@@ -11,14 +11,20 @@ const routes: RouteConfig[] = [
     component: Home,
   },
   {
+    path: '/articles',
+    name: 'Articles',
+    component: () => import('../views/Articles.vue'),
+  },
+  {
     path: '/about',
     name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    component: () => import('../views/About.vue'),
   },
 ];
 
 const router = new VueRouter({
   routes,
+  mode: "history",
 });
 
 export default router;

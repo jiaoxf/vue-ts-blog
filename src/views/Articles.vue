@@ -1,12 +1,11 @@
 <template>
   <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-    这是主页
+    这是vue的文章页面
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Home',
+  name: 'Articles',
 };
 </script>
