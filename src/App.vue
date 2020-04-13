@@ -1,5 +1,6 @@
 <template>
-  <div id='app'>
+  <div id='app' class="container">
+    <Nav />
     <router-view />
   </div>
 </template>
@@ -7,7 +8,9 @@
 <script lang='ts'>
 import { Component, Vue } from 'vue-property-decorator';
 import HelloWorld from '@/components/HelloWorld.vue';
+import Nav from '@/components/Nav.vue';
 import { isMobileOrPc } from '@/utils/utils';
+
 
 // 移动端 rem 单位适配
 if (isMobileOrPc()) {
@@ -22,6 +25,7 @@ if (isMobileOrPc()) {
 @Component({
   components: {
     HelloWorld,
+    Nav,
   },
 })
 export default class App extends Vue {}
