@@ -1,13 +1,14 @@
 <template>
   <div id='app' class="container">
-    <Nav />
+    <Nav v-if="isShowNav"/>
     <router-view />
   </div>
 </template>
 
 <script lang='ts'>
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Watch } from 'vue-property-decorator';
 import HelloWorld from '@/components/HelloWorld.vue';
+import { Route } from 'vue-router';
 import Nav from '@/components/Nav.vue';
 import { isMobileOrPc } from '@/utils/utils';
 
@@ -28,7 +29,37 @@ if (isMobileOrPc()) {
     Nav,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  private isShowNav: boolean = false;
+  private mounted(): void {
+    this.routeChange(this.$route, this.$route);
+  }
+  @Watch('$route')
+  private routeChange(val: Route, oldVal: Route): void {
+    const referrer: any = document.getElementById('referrer');
+    if (val.path === '/') {
+      this.isShowNav = false;
+      // referrer.setAttribute('content', 'always');
+    } else {
+      this.isShowNav = true;
+      // referrer.setAttribute('content', 'never');
+    }
+    /* if (
+      val.path === "/articles" ||
+      val.path === "/archive" ||
+      val.path === "/project" ||
+      val.path === "/timeline" ||
+      val.path === "/message"
+    ) {
+      this.isShowSlider = true;
+    } else {
+      this.isShowSlider = false;
+    }
+    if (isMobileOrPc()) {
+      this.isShowSlider = false;
+    } */
+  }
+}
 </script>
 
 <style lang='scss'>

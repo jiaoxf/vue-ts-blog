@@ -6,7 +6,7 @@
           <el-col :span="3">
             <router-link to="/">
               <img class="logo"
-                src="../assets/logo.png"
+                src="../assets/userLogo.jpeg"
                 alt="BiaoChenXuYing">
             </router-link>
           </el-col>
@@ -29,10 +29,10 @@
             <div class="nav-right">
               <el-button size="small"
                 type="primary"
-                @click="handleClick("login")">登录</el-button>
+                @click="handleClick('login')">登录</el-button>
               <el-button size="small"
                 type="danger"
-                @click="handleClick("register")">注册</el-button>
+                @click="handleClick('register')">注册</el-button>
             </div>
           </el-col>
         </el-row>
@@ -74,7 +74,7 @@ export default class Nav extends Vue {
     {
       index: '5',
       path: '/timeline',
-      name: '历程',
+      name: '时间轴',
     },
     {
       index: '6',

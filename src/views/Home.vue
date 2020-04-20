@@ -10,49 +10,27 @@
         </router-link>
       </div>
       <div class="home-body">
-    <LoadingCustom v-if="true"></LoadingCustom>
-        
+    <!-- <LoadingCustom v-if="true"></LoadingCustom> -->
         <div class="list">
-          <router-link class="link"
-            to="/articles">
-            文章
-          </router-link>
-          <router-link class="link"
-            to="/project">
-            项目
-          </router-link>
-          <a target="_blank"
-            rel="noopener noreferrer"
-            class="link"
-            href="https://github.com/jiaoxf">
-            github
-          </a>
-          <a target="_blank"
-            rel="noopener noreferrer"
-            class="link"
-            href="https://juejin.im/user/591d6b4d0ce463006926ae40">
-            掘金
-          </a>
-          <a target="_blank"
-            rel="noopener noreferrer"
-            class="link"
-            href="https://www.zhihu.com/people/gu-jian-qi-tan-shui/activities">
-            知乎
-          </a>
-          <a target="_blank"
-            rel="noopener noreferrer"
-            class="link"
-            href="https://segmentfault.com/u/biaochenxuying">
-            segmentfault
-          </a>
-          <a target="_blank"
-            rel="noopener noreferrer"
-            class="link"
-            href="https://www.jianshu.com/u/91717b553bfd">
-            简书
-          </a>
+          <div class="slideBox">
+            This is the way
+          </div>
+          <div router-list>
+            <router-link class="link"
+              to="/articles">
+              <span class="el-icon-platform-eleme"></span>
+            </router-link>
+            <router-link class="link"
+              to="/project">
+              <span class="el-icon-s-goods"></span>
+            </router-link>
+            <a target="_blank"
+              rel="noopener noreferrer"
+              class="link el-icon-s-goods"
+              href="https://github.com/jiaoxf">
+            </a>
+          </div>
         </div>
-        <div class="introduce"> 时光正好，未来可期，加油 ！ </div>
       </div>
     </div>
   </div>
@@ -85,9 +63,11 @@ export default class Home extends Vue {
     font-size: 20px;
     text-align: center;
     padding-top: 12%;
+    background: url('./../assets/bg.png') 100% 100% no-repeat;
+    background-size: 100% 100%;
     .home-logo {
-      width: 220px;
-      border-radius: 50%;
+      width: 160px;
+      border-radius: 10%;
       animation: mylogo 3s;
       -moz-animation: mylogo 3s; /* Firefox */
       -webkit-animation: mylogo 3s; /* Safari and Chrome */
@@ -102,14 +82,40 @@ export default class Home extends Vue {
     .home-body {
       padding-top: 20px;
       .list {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        width: 50%;
+        margin: auto;
+        font-size: 22px;
+        color: #eaeadf;
+        background: rgba(0,0,0,.5);
+        padding: 15px;
+        margin-top: 22px;
+        letter-spacing: 0;
+        line-height: 30px;
+        border-radius: 10px;
+        box-sizing: initial;
+        white-space: nowrap;
+        &::before{
+          content: "";
+          position: absolute;
+          top: -30px;
+          left: 50%;
+          margin-left: -15px;
+          border-width: 15px;
+          border-style: solid;
+          border-color: transparent transparent rgba(0,0,0,.5) transparent;
+        }
         .link {
           display: inline-block;
-          padding: 20px;
-          color: #409eff;
+          /* padding: 20px; */
+          /* color: #409eff; */
           min-width: 80px;
         }
         .link:hover {
-          color: rgb(155, 35, 35);
+          /* color: rgb(155, 35, 35); */
         }
       }
     }
