@@ -25,7 +25,6 @@
               </el-menuItem>
             </el-menu>
           </el-col>
-          
           <el-col :span="4">
             <div class="nav-right">
               <el-button size="small"
@@ -93,10 +92,6 @@ export default class Nav extends Vue {
   private leaveSlideDown: boolean = false;
   private isShow: boolean = false;
   private isMobile: boolean = isMobileOrPc();
-  mounted() {
-    
-  }
-
   /* private handleClickMenu(route: string): void {
     this.isShow = false;
     if (route === "/login") {

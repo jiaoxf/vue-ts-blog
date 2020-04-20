@@ -1,10 +1,10 @@
-import Vue from "vue";
-import Component from "vue-class-component";
-import App from "./App.vue";
-import router from "./router";
-import store from "./store/index";
-import service from "./utils/https";
-import urls from "./utils/urls";
+import Vue from 'vue';
+import Component from 'vue-class-component';
+import App from './App.vue';
+import router from './router';
+import store from './store/index';
+import service from './utils/https';
+import urls from './utils/urls';
 import {
   Dialog,
   Form,
@@ -23,11 +23,11 @@ import {
   Timeline,
   TimelineItem,
   Card,
-  Tag
-} from "element-ui";
-// import CollapseTransition from "element-ui/lib/transitions/collapse-transition";
+  Tag,
+} from 'element-ui';
+// import CollapseTransition from 'element-ui/lib/transitions/collapse-transition';
 import 'element-ui/lib/theme-chalk/index.css';
-import mixin from "./mixins";
+import mixin from './mixins';
 
 Vue.mixin(mixin);
 
@@ -60,13 +60,13 @@ Vue.prototype.$urls = urls; // 其他页面在使用 URLS 的时候直接  this.
 
 // https://www.npmjs.com/package/vue-class-component#adding-custom-hooks
 Component.registerHooks([
-  "beforeRouteEnter",
-  "beforeRouteLeave",
-  "beforeRouteUpdate"
+  'beforeRouteEnter',
+  'beforeRouteLeave',
+  'beforeRouteUpdate',
 ]);
 
 new Vue({
   router,
   store,
-  render: h => h(App)
-}).$mount("#app");
+  render: (h) => h(App),
+}).$mount('#app');
