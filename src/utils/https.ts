@@ -1,5 +1,5 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
-import { Message } from 'element-ui';
+// import { Message } from 'element-ui';
 
 export interface ResponseData {
   code: number;
@@ -44,16 +44,18 @@ service.interceptors.response.use(
       if (data.code === 0) {
         return data.data;
       } else {
-        Message({
+        /* Message({
           message: data.message,
           type: 'error',
-        });
+        }); */
+        alert(data.message);
       }
     } else {
-      Message({
+      /* Message({
         message: '网络错误!',
         type: 'error',
-      });
+      }); */
+      alert('网络错误');
       return Promise.reject(new Error(res.data.message || 'Error'));
     }
   },

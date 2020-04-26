@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-    <div class="content">
+    <!-- <div class="content">
       <div class="home-header">
         <router-link class="link" to="/">
           <img class="home-logo"
@@ -10,39 +10,33 @@
         </router-link>
       </div>
       <div class="home-body">
-    <!-- <LoadingCustom v-if="true"></LoadingCustom> -->
-        <div class="list">
-          <div class="slideBox">
-            This is the way
-          </div>
-          <div router-list>
-            <router-link class="link"
-              to="/articles">
-              <span class="el-icon-platform-eleme"></span>
-            </router-link>
-            <router-link class="link"
-              to="/project">
-              <span class="el-icon-s-goods"></span>
-            </router-link>
-            <a target="_blank"
-              rel="noopener noreferrer"
-              class="link el-icon-s-goods"
-              href="https://github.com/jiaoxf">
-            </a>
-          </div>
-        </div>
+        <LoadingCustom v-if="true"></LoadingCustom>
       </div>
-    </div>
+    </div> -->
+    <!-- App.vue -->
+    <v-app>
+      <v-navigation-drawer app>
+        <Nav />
+      </v-navigation-drawer>
+      <v-content>
+        <!-- Provides the application the proper gutter -->
+        <v-container fluid>
+          <router-view></router-view>
+        </v-container>
+      </v-content>
+    </v-app>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import Nav from '@/components/Nav.vue';
 import LoadingCustom from '@/components/Loading.vue';
 
 @Component({
   components: {
     LoadingCustom,
+    Nav,
   },
 })
 export default class Home extends Vue {

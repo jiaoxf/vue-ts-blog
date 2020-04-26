@@ -1,6 +1,5 @@
 <template>
   <div id='app' class="container">
-    <Nav v-if="isShowNav"/>
     <router-view />
   </div>
 </template>
