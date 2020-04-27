@@ -5,11 +5,9 @@ import router from './router';
 import store from './store/index';
 import service from './utils/https';
 import urls from './utils/urls';
-import Vuetify from 'vuetify';
 import vuetify from '@/plugins/vuetify';
 import mixin from './mixins';
 
-Vue.use(Vuetify);
 Vue.mixin(mixin);
 
 Vue.config.productionTip = false;

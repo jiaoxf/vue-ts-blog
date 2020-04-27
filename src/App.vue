@@ -1,5 +1,5 @@
 <template>
-  <div id='app' class="container">
+  <div id='app'>
     <router-view />
   </div>
 </template>
@@ -13,13 +13,13 @@ import { isMobileOrPc } from '@/utils/utils';
 
 
 // 移动端 rem 单位适配
-if (isMobileOrPc()) {
-  // width * 100 / 750 = width / 7.5
-  // 1rem = 100px
+/* if (isMobileOrPc()) {
+  width * 100 / 750 = width / 7.5
+  1rem = 100px
   const width = window.screen.width;
   window.document.getElementsByTagName('html')[0].style.fontSize =
     width / 7.5 + 'px';
-}
+} */
 
 
 @Component({
@@ -68,8 +68,5 @@ export default class App extends Vue {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  width: 1200px;
-  margin: 0 auto;
-  margin-top: 60px;
 }
 </style>

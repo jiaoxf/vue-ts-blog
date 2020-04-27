@@ -1,51 +1,55 @@
 <template>
-  <section>
+  <v-app id="inspire">
     <nav>
-      <!-- <v-card class="mx-auto" height="100%" overflow-hidden>
-        <v-toolbar dense>
-          <v-app-bar-nav-icon @click="drawer=true"></v-app-bar-nav-icon>
-          <v-toolbar-title>Title</v-toolbar-title>
-        </v-toolbar>
-        <v-navigation-drawer
-          class="deep-purple accent-4"
-          dark
-          permanent
-        >
-          <v-list-item>
+      <v-navigation-drawer
+        class="d-none d-sm-flex white--text"
+      >
+        <v-list-item>
+          <v-list-item-content>
+            <v-list-item-title class="title">
+              Application
+            </v-list-item-title>
+            <v-list-item-subtitle>
+              subtext
+            </v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+        <v-divider></v-divider>
+        <v-list nav dense>
+          <v-list-item link>
+            <v-list-item-action>
+              <v-icon>mdi-view-dashboard</v-icon>
+            </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title class="title">
-                Application
-              </v-list-item-title>
-              <v-list-item-subtitle>
-                subtext
-              </v-list-item-subtitle>
+              <v-list-item-title>Dashboard</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-divider></v-divider>
-          <v-list>
-            <v-list-item
-              v-for="item in list"
-              :key="item.title"
-              link
-            >
-              <v-list-item-icon>
-                <v-icon>{{ item.icon }}</v-icon>
-              </v-list-item-icon>
-              <v-list-item-content>
-                <v-list-item-title>{{ item.name }}</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list>
-
-          <template v-slot:append>
-            <div class="pa-2">
-              <v-btn block>Logout</v-btn>
-            </div>
-          </template>
-        </v-navigation-drawer>
-      </v-card> -->
+          <v-list-item link>
+            <v-list-item-action>
+              <v-icon>mdi-home</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Settings</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+        <template v-slot:append>
+          <div class="pa-2">
+            <v-btn block>Logout</v-btn>
+          </div>
+        </template>
+      </v-navigation-drawer>
+      <v-app-bar
+        app
+        clipped-left
+        class="d-flex d-sm-none"
+      >
+        <!-- <v-app-bar-nav-icon @click.stop="drawer = !drawer" /> -->
+        <v-icon @click.stop="drawer = !drawer" >mdi-home</v-icon>
+        <v-toolbar-title>Application</v-toolbar-title>
+      </v-app-bar>
     </nav>
-  </section>
+  </v-app>
 </template>
 <script lang='ts'>
 import { Component, Vue, Watch } from 'vue-property-decorator';
@@ -57,7 +61,7 @@ export default class Nav extends Vue {
   private visible: boolean = false;
   private handleFlag: string = '';
   private title: string = '首页';
-  private drawer: boolean = false;
+  private drawer: any = false;
   private list: NavListItem[] = [
     {
       index: '1',
