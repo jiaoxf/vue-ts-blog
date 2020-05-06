@@ -1,109 +1,108 @@
 <template>
-  <v-app id="inspire">
-    <nav>
-      <v-navigation-drawer
-        class="d-none d-sm-flex white--text"
-      >
-        <v-list-item>
-          <v-list-item-content>
-            <v-list-item-title class="title">
-              Application
-            </v-list-item-title>
-            <v-list-item-subtitle>
-              subtext
-            </v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
-        <v-divider></v-divider>
-        <v-list nav dense>
-          <v-list-item link>
-            <v-list-item-action>
-              <v-icon>mdi-view-dashboard</v-icon>
-            </v-list-item-action>
+  <div>
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+      fixed
+    >
+      <v-list-item two-line :class="miniVariant && 'px-0'">
+        <v-avatar class="mx-auto mt-12"  size="100" height="75px" width="75px">
+          <img src="https://randomuser.me/api/portraits/men/81.jpg">
+        </v-avatar>
+      </v-list-item>
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="slider-name">个人博客</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+      <v-divider></v-divider>
+      <v-list nav dense>
+        <v-list-item-group v-model="item" color="primary">
+          <v-list-item
+            v-for="(item, i) in items"
+            :route="item.path"
+            :key="i"
+          >
+            <v-list-item-icon class="mr-4">
+                <!-- <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-daohangliebiao"></use>
+                </svg> -->
+                <Icon :name="item.icon"/>
+            </v-list-item-icon>
+
             <v-list-item-content>
-              <v-list-item-title>Dashboard</v-list-item-title>
+              <v-list-item-title class="text-start" v-text="item.name"></v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item link>
-            <v-list-item-action>
-              <v-icon>mdi-home</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>Settings</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list>
-        <template v-slot:append>
-          <div class="pa-2">
-            <v-btn block>Logout</v-btn>
-          </div>
-        </template>
-      </v-navigation-drawer>
-      <v-app-bar
-        app
-        clipped-left
-        class="d-flex d-sm-none"
-      >
-        <!-- <v-app-bar-nav-icon @click.stop="drawer = !drawer" /> -->
-        <v-icon @click.stop="drawer = !drawer" >mdi-home</v-icon>
-        <v-toolbar-title>Application</v-toolbar-title>
-      </v-app-bar>
-    </nav>
-  </v-app>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-app-bar
+      app
+      class="d-flex d-sm-none"
+    >
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer">
+        
+        <Icon name="daohangliebiao"/>
+      </v-app-bar-nav-icon>
+      <v-toolbar-title>{{ title }}</v-toolbar-title>
+    </v-app-bar>
+  </div>
 </template>
 <script lang='ts'>
 import { Component, Vue, Watch } from 'vue-property-decorator';
 import { isMobileOrPc, getQueryStringByName } from '@/utils/utils';
 import { NavListItem } from '@/types/index';
+import Icon from '@/components/Icon.vue';
+// import Component from 'vue-class-component';
 
-
+@Component({
+  components: {
+    Icon,
+  },
+})
 export default class Nav extends Vue {
   private visible: boolean = false;
   private handleFlag: string = '';
   private title: string = '首页';
-  private drawer: any = false;
-  private list: NavListItem[] = [
-    {
-      index: '1',
-      path: '/',
-      name: '首页',
-      icon: 'home',
-    },
+  private drawer: any = null;
+  private items: NavListItem[] = [
     {
       index: '2',
       path: '/articles',
       name: '文章',
-      icon: 'dashboard',
+      icon: 'wenzhangguanli',
     },
     {
       index: '3',
       path: '/archive',
-      name: '归档',
-      icon: 'dashboard',
+      name: '框架',
+      icon: 'vue',
     },
     {
       index: '4',
       path: '/project',
       name: '项目',
-      icon: 'dashboard',
+      icon: 'gongzuojingyan',
     },
     {
       index: '5',
       path: '/timeline',
-      name: '时间轴',
-      icon: 'dashboard',
+      name: '转载',
+      icon: 'wenzhangshoucang',
     },
     {
       index: '6',
-      path: '/message',
-      name: '留言',
-      icon: 'dashboard',
+      path: '/',
+      name: '开源',
+      icon: 'github',
     },
     {
       index: '7',
       path: '/about',
       name: '关于',
-      icon: 'dashboard',
+      icon: 'guanyuwomen',
     },
   ];
   private activeIndex: string = '0';
@@ -125,6 +124,9 @@ export default class Nav extends Vue {
       this.handleLogout();
     }
   } */
+  private mounted(): void {
+    console.log(this.$route);
+  }
   private handleMenu(): void {
     this.isShow = true;
     this.enterSlideUp = true;
@@ -136,6 +138,9 @@ export default class Nav extends Vue {
       this.leaveSlideDown = false;
       this.isShow = false;
     }, 300);
+  }
+  private drawerBtn(): void {
+    this.drawer = true;
   }
 
 
@@ -166,5 +171,13 @@ nav{
   background-color: rgb(42, 41, 53);
   border-color: rgb(42, 41, 53);
   max-height: calc(100% - 0px);
+}
+.slider-name{
+  text-align: center;
+  margin: 20px 0;
+  font-size: 18px;
+}
+.v-list-item.v-list-item--link {
+    padding: 0px 0px 0px 60px !important;
 }
 </style>

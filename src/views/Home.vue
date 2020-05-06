@@ -14,13 +14,16 @@
       </div>
     </div> -->
     <!-- App.vue -->
-    <v-app>
+    <v-app id="inspire">
       <Nav />
       <v-content>
         <v-container
           class="fill-height"
           fluid
         >
+          <!-- <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-biaoqian"></use>
+          </svg> -->
           <router-view></router-view>
         </v-container>
       </v-content>
@@ -43,5 +46,13 @@ export default class Home extends Vue {
   private isLoading: boolean = true;
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
+.icon {
+  font-size: 22px;
+  width: 1em; 
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
 </style>

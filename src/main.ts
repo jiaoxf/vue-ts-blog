@@ -7,6 +7,8 @@ import service from './utils/https';
 import urls from './utils/urls';
 import vuetify from '@/plugins/vuetify';
 import mixin from './mixins';
+import '../src/assets/icon/iconfont.js';
+
 
 Vue.mixin(mixin);
 
