@@ -4,25 +4,29 @@
       v-model="drawer"
       app
       fixed
+      class="d-none d-md-flex"
     >
-      <v-list-item two-line :class="miniVariant && 'px-0'">
+      <v-list-item>
         <v-avatar class="mx-auto mt-12"  size="100" height="75px" width="75px">
-          <img src="https://randomuser.me/api/portraits/men/81.jpg">
+          <!-- <img src="https://randomuser.me/api/portraits/men/81.jpg"> -->
         </v-avatar>
       </v-list-item>
       <v-list-item>
         <v-list-item-content>
-          <v-list-item-title class="slider-name">个人博客</v-list-item-title>
+          <v-list-item-title class="slider-name">XXXX</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
       <v-divider></v-divider>
       <v-list nav dense>
-        <v-list-item-group v-model="item" color="primary">
+        <v-list-item-group color="primary">
           <v-list-item
+          link
             v-for="(item, i) in items"
-            :route="item.path"
+            :to="item.path"
             :key="i"
           >
+          <router-link :to="item.path"></router-link>
+          
             <v-list-item-icon class="mr-4">
                 <!-- <svg class="icon" aria-hidden="true">
                   <use xlink:href="#icon-daohangliebiao"></use>
@@ -40,7 +44,7 @@
 
     <v-app-bar
       app
-      class="d-flex d-sm-none"
+      class="d-flex d-lg-none"
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer">
         

@@ -17,13 +17,10 @@
     <v-app id="inspire">
       <Nav />
       <v-content>
-        <v-container
-          class="fill-height"
-          fluid
-        >
-          <!-- <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-biaoqian"></use>
-          </svg> -->
+          <v-container
+            class="fill-height container--fluid container"
+            fluid
+          >
           <router-view></router-view>
         </v-container>
       </v-content>
