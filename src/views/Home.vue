@@ -18,7 +18,7 @@
       <Nav />
       <v-content>
           <v-container
-            class="fill-height container--fluid container"
+            class="fill-height container"
             fluid
           >
           <router-view></router-view>

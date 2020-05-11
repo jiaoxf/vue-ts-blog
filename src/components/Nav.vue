@@ -4,7 +4,7 @@
       v-model="drawer"
       app
       fixed
-      class="d-none d-md-flex"
+      class=" d-md-flex"
     >
       <v-list-item>
         <v-avatar class="mx-auto mt-12"  size="100" height="75px" width="75px">
