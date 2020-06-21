@@ -80,7 +80,7 @@ export default class Nav extends Vue {
     },
     {
       index: '3',
-      path: '/archive',
+      path: '/frame',
       name: '框架',
       icon: 'vue',
     },
@@ -92,13 +92,13 @@ export default class Nav extends Vue {
     },
     {
       index: '5',
-      path: '/timeline',
+      path: '/reprinted',
       name: '转载',
       icon: 'wenzhangshoucang',
     },
     {
       index: '6',
-      path: '/',
+      path: '/openSource',
       name: '开源',
       icon: 'github',
     },

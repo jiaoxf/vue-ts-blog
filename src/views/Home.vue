@@ -19,7 +19,6 @@
       <v-content>
           <v-container
             class="fill-height container"
-            fluid
           >
           <router-view></router-view>
         </v-container>
@@ -51,5 +50,13 @@ export default class Home extends Vue {
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
+}
+@keyframes rise3 {
+  0% {
+    transform: translate3d(0, 100%, 0) scale(0);
+  }
+  100% {
+    transform: translate3d(0, -50%, 0) scale(1);
+  }
 }
 </style>
