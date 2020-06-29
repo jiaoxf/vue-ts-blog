@@ -1,102 +1,100 @@
 // 基础
 export interface Meta {
-  views: number;
-  likes: number;
-  comments: number;
+    views: number;
+    likes: number;
+    comments: number;
 }
 
 export interface ToUser {
-  user_id: string;
-  name: string;
-  avatar: string;
-  type: number;
+    user_id: string;
+    name: string;
+    avatar: string;
+    type: number;
 }
 export interface Params {
-  keyword: string;
-  pageNum: number;
-  pageSize: number;
+    keyword: string;
+    pageNum: number;
+    pageSize: number;
 }
 
 // 登录
 export interface LoginParams {
-  email: string;
-  password: string;
+    email: string;
+    password: string;
 }
 export interface UserInfo {
-  _id: string;
-  name: string;
-  avatar: string | any;
+    _id: string;
+    name: string;
+    avatar: string | any;
 }
 export interface RegAndLogParams {
-  email: string;
-  name: string;
-  password: string;
-  phone: string;
-  desc: string;
+    email: string;
+    name: string;
+    password: string;
+    phone: string;
+    desc: string;
 }
 
 
 // 导航 nav
 export interface NavListItem {
-  index: string;
-  path: string;
-  name: string;
-  icon: string;
+    index: string;
+    path: string;
+    name: string;
+    icon: string;
 }
-
-
 
 // 文章归档
 export interface ParamsArchive {
-  keyword: string;
-  likes: string; // 是否是热门文章
-  state: number; // 文章发布状态 => 0 草稿，1 已发布,'' 代表所有文章
-  article: number;
-  tag_id: string;
-  category_id: string;
-  pageNum: number;
-  pageSize: number;
+    keyword: string;
+    likes: string; // 是否是热门文章
+    state: number; // 文章发布状态 => 0 草稿，1 已发布,'' 代表所有文章
+    article: number;
+    tag_id: string;
+    category_id: string;
+    pageNum: number;
+    pageSize: number;
 }
 export interface ArchiveListItem {
-  create_time: string;
-  title: string;
-  _id: string;
+    create_time: string;
+    title: string;
+    _id: string;
 }
 export interface ArchiveList {
-  year: string;
-  list: ArchiveListItem[];
+    year: string;
+    list: ArchiveListItem[];
 }
 export interface ArchiveData {
-  count: number;
-  list: ArchiveList | any;
+    count: number;
+    list: ArchiveList | any;
 }
 
 
 // 文章详情
 export interface OtherComments {
-  content: string;
-  create_time: string;
-  likes: number;
-  state: number;
-  to_user: ToUser;
-  user: ToUser;
-  _id: string;
+    content: string;
+    create_time: string;
+    likes: number;
+    state: number;
+    to_user: ToUser;
+    user: ToUser;
+    _id: string;
 }
 export interface Comments {
-  article_id: string;
-  content: string;
-  create_time: string;
-  id: number;
-  is_handle: number;
-  is_top: boolean;
-  likes: number;
-  other_comments: OtherComments[];
-  state: number;
-  update_time: string;
-  user: ToUser;
-  user_id: string;
-  __v: number;
-  _id: string;
+    article_id: string;
+    content: string;
+    create_time: string;
+    id: number;
+    is_handle: number;
+    is_top: boolean;
+    likes: number;
+    other_comments: OtherComments[];
+    state: number;
+    update_time: string;
+    user: ToUser;
+    user_id: string;
+    __v: number;
+    _id: string;
 }
 
 export interface ArticleDetailIF {
@@ -186,19 +184,19 @@ export interface ProjectList {
   _id: string;
 }
 export interface ProjectsData {
-  count: number;
-  list: ProjectList | any;
+    count: number;
+    list: ProjectList | any;
 }
 
 
 // 历程
 export interface TimelineList {
-  content: string;
-  end_time: string;
-  start_time: string;
-  title: string;
-  state: number;
-  _id: string;
+    content: string;
+    end_time: string;
+    start_time: string;
+    title: string;
+    state: number;
+    _id: string;
 }
 export interface TimelinesData {
   count: number;

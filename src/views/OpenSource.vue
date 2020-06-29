@@ -1,18 +1,18 @@
 <template>
-  <div class='OpenSource'>
+    <div class='OpenSource'>
 
-  </div>
+    </div>
 </template>
 <script lang='ts'>
 import { Component, Prop, Watch, Vue } from 'vue-property-decorator';
 @Component({
-  name: 'OpenSource',
-  components: {
+    name: 'OpenSource',
+    components: {
 
-  },
+    },
 })
 export default class extends Vue {
-  private isShow: boolean = true;
+    private isShow: boolean = true;
 }
 </script>
 <style lang='scss' scoped>

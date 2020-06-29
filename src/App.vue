@@ -23,50 +23,50 @@ import { isMobileOrPc } from '@/utils/utils';
 
 
 @Component({
-  components: {
-    HelloWorld,
-    Nav,
-  },
+    components: {
+        HelloWorld,
+        Nav,
+    },
 })
 export default class App extends Vue {
-  private isShowNav: boolean = false;
-  private mounted(): void {
-    this.routeChange(this.$route, this.$route);
-  }
-  @Watch('$route')
-  private routeChange(val: Route, oldVal: Route): void {
-    const referrer: any = document.getElementById('referrer');
-    if (val.path === '/') {
-      this.isShowNav = false;
-      // referrer.setAttribute('content', 'always');
-    } else {
-      this.isShowNav = true;
-      // referrer.setAttribute('content', 'never');
+    private isShowNav: boolean = false;
+    private mounted(): void {
+        this.routeChange(this.$route, this.$route);
     }
-    /* if (
-      val.path === "/articles" ||
-      val.path === "/archive" ||
-      val.path === "/project" ||
-      val.path === "/timeline" ||
-      val.path === "/message"
-    ) {
-      this.isShowSlider = true;
-    } else {
-      this.isShowSlider = false;
+    @Watch('$route')
+    private routeChange(val: Route, oldVal: Route): void {
+        const referrer: any = document.getElementById('referrer');
+        if (val.path === '/') {
+        this.isShowNav = false;
+        // referrer.setAttribute('content', 'always');
+        } else {
+        this.isShowNav = true;
+        // referrer.setAttribute('content', 'never');
+        }
+        /* if (
+        val.path === "/articles" ||
+        val.path === "/archive" ||
+        val.path === "/project" ||
+        val.path === "/timeline" ||
+        val.path === "/message"
+        ) {
+        this.isShowSlider = true;
+        } else {
+        this.isShowSlider = false;
+        }
+        if (isMobileOrPc()) {
+        this.isShowSlider = false;
+        } */
     }
-    if (isMobileOrPc()) {
-      this.isShowSlider = false;
-    } */
-  }
 }
 </script>
 
 <style lang='scss'>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
 }
 </style>

@@ -18,14 +18,14 @@ Vue.prototype.$urls = urls;
 
 // https://www.npmjs.com/package/vue-class-component#adding-custom-hooks
 Component.registerHooks([
-  'beforeRouteEnter',
-  'beforeRouteLeave',
-  'beforeRouteUpdate',
+    'beforeRouteEnter',
+    'beforeRouteLeave',
+    'beforeRouteUpdate',
 ]);
 
 new Vue({
-  vuetify,
-  router,
-  store,
-  render: (h) => h(App),
+    vuetify,
+    router,
+    store,
+    render: (h) => h(App),
 }).$mount('#app');

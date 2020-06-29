@@ -1,13 +1,13 @@
 <template>
-  <div class="loading">
-    <div class="sk-wave">
-      <div class="sk-wave-rect"></div>
-      <div class="sk-wave-rect"></div>
-      <div class="sk-wave-rect"></div>
-      <div class="sk-wave-rect"></div>
-      <div class="sk-wave-rect"></div>
+    <div class="loading">
+        <div class="sk-wave">
+        <div class="sk-wave-rect"></div>
+        <div class="sk-wave-rect"></div>
+        <div class="sk-wave-rect"></div>
+        <div class="sk-wave-rect"></div>
+        <div class="sk-wave-rect"></div>
+        </div>
     </div>
-  </div>
 </template>
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
@@ -17,26 +17,26 @@ export default class LoadingCustom extends Vue {}
 </script>
 <style scoped>
 .loading {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  padding: 30px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
 }
 
 .sk-wave {
-  font-size: 40px;
-  color: #ccc;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: space-between;
+    font-size: 40px;
+    color: #ccc;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .sk-wave-rect {
-  background-color: #03ccbb;
-  height: 100%;
-  width: 15%;
-  animation: sk-wave 1.2s infinite ease-in-out; 
+    background-color: #03ccbb;
+    height: 100%;
+    width: 15%;
+    animation: sk-wave 1.2s infinite ease-in-out; 
 }
 
 .sk-wave-rect:nth-child(1) { background:#93dbe9; animation-delay: -1.2s; }
@@ -46,10 +46,10 @@ export default class LoadingCustom extends Vue {}
 .sk-wave-rect:nth-child(5) { background:#b3b7e2; animation-delay: -0.8s; }
 
 @keyframes sk-wave {
-  0%, 40%, 100% {
-    transform: scaleY(0.4); 
-  } 20% {
-    transform: scaleY(1); 
-  } 
+    0%, 40%, 100% {
+        transform: scaleY(0.4); 
+    } 20% {
+        transform: scaleY(1); 
+    } 
 }
 </style>
