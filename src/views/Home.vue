@@ -1,19 +1,5 @@
 <template>
     <div class="home">
-        <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-        <!-- <div class="content">
-        <div class="home-header">
-            <router-link class="link" to="/">
-            <img class="home-logo"
-                src="../assets/userLogo.jpeg"
-                alt="biaochenxuying logo" />
-            </router-link>
-        </div>
-        <div class="home-body">
-            <LoadingCustom v-if="true"></LoadingCustom>
-        </div>
-        </div> -->
-        <!-- App.vue -->
         <v-app id="inspire">
         <Nav />
         <v-content>

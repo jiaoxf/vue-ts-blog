@@ -4,7 +4,9 @@
             v-model="drawer"
             app
             fixed
-            class=" d-md-flex"
+            class="d-md-flex"
+            color="#fff"
+            light
         >
             <v-list-item>
                 <v-avatar class="mx-auto mt-12"  size="100" height="75px" width="75px">
@@ -18,7 +20,9 @@
             </v-list-item>
             <v-divider></v-divider>
             <v-list nav dense>
-                <v-list-item-group color="primary">
+                <v-list-item-group 
+                    active-class="green darken-1"
+                >
                 <v-list-item
                 link
                     v-for="(item, i) in items"
@@ -170,9 +174,10 @@ nav{
     height: 100vh;
     top: 0px;
     transform: translateX(0%);
-    background-color: rgb(42, 41, 53);
+    background-color: #fff;
     border-color: rgb(42, 41, 53);
     max-height: calc(100% - 0px);
+    color: #fff!important
 }
 .slider-name{
     text-align: center;
@@ -181,5 +186,8 @@ nav{
 }
 .v-list-item.v-list-item--link {
     padding: 0px 0px 0px 60px !important;
+}
+.v-application .green.darken-1 {
+    color: #fff!important;
 }
 </style>
